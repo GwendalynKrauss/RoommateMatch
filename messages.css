@@ -1,0 +1,112 @@
+header {
+    background-color: #813333;
+    padding: 0.25rem 0.5rem;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 4rem;               /* spacing between buttons */
+  justify-content: center; /* center the nav bar */
+  padding: 0;
+}
+
+.title {
+    position: absolute;
+    top:10;
+    left:40%;
+    text-align: center;
+}
+nav a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #000;        /* black button */
+  color: #fff;             /* white text */
+  text-decoration: none;   /* remove underline */
+  border-radius: 5px;      /* rounded corners */
+  font-weight: bold;
+}
+
+nav a:hover {
+  background: #813333;        /* lighter black/gray on hover */
+}
+
+.message {
+    position: absolute;
+  top: 20;             /* stick to top */
+  right: 0;           /* stick to right */
+}
+
+.background {
+    position: fixed;
+    inset: 0; /* fills the page */
+    display: grid;
+    place-items: center; /* centers child img */
+    z-index: -1;
+}
+
+/* Grid of 4 cards */
+.notifications-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* left | middle | right */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+/* Columns of cards */
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Text area in the middle */
+.text-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 20px; */
+  font-size: 50px;
+  color:#813333;
+  /* line-height: 1.5; */
+  line-height: 100px;
+}
+
+/* Card styling */
+.card {
+  border: 2px solid #333;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+/* Header bar */
+.card-header {
+  background-color: #813333;
+  color: white;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  height: 50px;
+}
+
+/* Profile picture */
+.card-header img.profile-pic {
+  width: 40px;
+  height: 50px;
+  /* border-radius: 50%; */
+  /* object-fit: cover; */
+  /* flex-shrink: 0; */
+  /* border: 2px solid white; */
+}
+
+/* Card body */
+.card-body {
+  padding: 15px;
+  height:100px;
+  font-size: 14px;
+  color: #333;
+}
