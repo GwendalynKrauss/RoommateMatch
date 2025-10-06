@@ -1,0 +1,498 @@
+
+
+
+
+/*GWENS PROFILE*/
+header {
+    background-color: #813333;
+    padding: 0.25rem 0.5rem;
+}
+/*profile picture image*/
+.profile-top-right {
+  display: block;
+  margin-left: auto;   /* pushes image to the right */
+  margin-right: 1rem;  /* small spacing from edge */
+  margin-top: 0.5rem;  /* spacing under header */
+  max-width: 120px;
+  border-radius: 8px;
+  padding:10px 20px;
+}
+
+.profile-about-section {
+  position: absolute;
+  right: 6rem;
+  top: calc(50% + 200px);   /* shift it down so it starts below your photo THIS TOO*/
+ /* transform: translateY(-50%);*/
+  max-width: 300px;
+  text-align: left;
+  line-height: 1.5;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+
+.profile-about-section img {
+  max-width: 100%;          
+  border-radius: 8px;        /* rounded corners */
+  margin-bottom: 1rem;       /* space below image */
+}
+
+.profile-about-section h3 {
+  margin-bottom: 0.5rem;
+}
+
+
+.profile-about-content {
+  flex: 1;                     /* take up space between images */
+  text-align: center;          /* center "About" and paragraph */
+}
+
+
+
+.profile-about-row {
+  display: flex;
+  justify-content: flex-end;  /* keep content aligned right */
+  gap: 1rem;                  /* space between "About" and paragraph */
+  width: 100%;
+  max-width: 600px;
+}
+
+.profile-myprofile-section {
+  display: flex;          /* puts image + text side by side */
+  align-items: flex-start;/* align to the top */
+  gap: 1rem;              /* space between image and text */
+  margin-bottom: 2rem;
+}
+
+.profile-myprofile-section img {
+  max-width: 300px;       /* size of the profile picture */
+  border-radius: 8px;     /* optional rounded corners */
+  padding:20px 20px;
+}
+
+.profile-bottomphoto {
+    padding:20px 20px;
+}
+body, html {
+    margin: 0;
+    height: 100%;
+}
+
+.profile-background {
+    position: fixed;
+    inset: 0; /* fills the page */
+    display: grid;
+    place-items: center; /* centers child img */
+    z-index: -1;
+}
+
+.profile-background img {
+    width: 90%;   /* make image cover 75% of the page width */
+    height: 90%;  /* make image cover 75% of the page height */
+    object-fit: cover; /* scale nicely inside */
+    opacity: 0.75;     /* 25% translucent */
+}
+
+
+
+.myprofile-details {
+  display: flex;
+  flex-direction: column; /* stack Name above Status */
+  justify-content: center;
+  padding:10px 20px;
+}
+
+.myprofile-details h3 {
+  margin: 0.25rem 0;      /* reduce default spacing */
+  padding:10px 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 4rem;               /* spacing between buttons */
+  justify-content: center; /* center the nav bar */
+  padding: 0;
+}
+
+nav a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #000;        /* black button */
+  color: #fff;             /* white text */
+  text-decoration: none;   /* remove underline */
+  border-radius: 5px;      /* rounded corners */
+  font-weight: bold;
+  body {font-size: 16px;
+  line-height: 1.5;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;}
+}
+
+nav a:hover {
+  background: #444;        /* lighter black/gray on hover */
+}
+/*GWENS MESSAGES*/
+.messages-title {
+    position: absolute;
+    top:10;
+    left:40%;
+    text-align: center;
+}
+
+.message {
+    position: absolute;
+  top: 20;             /* stick to top */
+  right: 0;           /* stick to right */
+}
+
+.messages-background {
+    position: fixed;
+    inset: 0; /* fills the page */
+    display: grid;
+    place-items: center; /* centers child img */
+   z-index: -1;     /*moves the image behind the text*/
+}
+
+/* Grid of 4 cards */
+.messages-notifications-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* left | middle | right */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+/* Columns of cards */
+.messages-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Text area in the middle */
+.messages-text-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 20px; */
+  font-size: 50px;
+  color:#813333;
+  /* line-height: 1.5; */
+  line-height: 100px;
+  line-height: 1.5;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+}
+
+/* Card styling */
+.messages-card {
+  border: 2px solid #333;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+/* Header bar */
+.messages-card-header {
+  background-color: #813333;
+  color: white;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  height: 50px;
+}
+
+/* Profile picture */
+.messages-card-header img.profile-pic {
+  width: 40px;
+  height: 50px;
+}
+
+/* Card body */
+.messages-card-body {
+  padding: 15px;
+  height:100px;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+
+
+/* _____________________________________________________________________________________________________________________*/
+
+/* ============ GRID ===========(Creates the grid that holds the profiles of the potential roommates within the site)= */                    
+.grid{  /* controls the grid layout*/
+  max-width: 1200px;
+  margin: 0 auto 28px;
+  padding: 0 18px 24px;
+  display:grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 26px 32px;
+}
+
+@media (max-width: 820px){
+  .grid{ grid-template-columns: 1fr; }
+}
+
+/* ============ PROFILE CARD ===(creates each roommate's description========= */
+.card{     /* container for each roommate description*/
+  background: var(--panel);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px 18px;
+  position: relative;
+}
+.card-inner{  /* controls the placement of card/container*/
+  display:grid;
+  grid-template-columns: 120px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+.card img{   /* controls image of roommate inside grid*/
+  width: 120px;
+  height: auto;
+  border-radius: 6px;
+  background:#eee;
+  object-fit: cover;
+  display:block;
+}
+.card .meta{
+  font-size: 14px;
+  color:#111;
+  line-height:1.4;
+  white-space:pre-line; 
+}
+.card .label{ font-weight:700; }
+
+/* “More” button */
+
+.card .more {  /* controls the more button*/
+  margin-top: 10px;
+  background: var(--charcoal, #111);
+  color: #eaeaea;
+  font-size: 12px;
+  padding: 7px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.15s ease, transform 0.06s ease;
+}
+
+.card .more:hover { /* controls the more button hover*/
+  background: #1f1f1f;
+  transform: translateY(-1px);
+}
+
+
+/* ============ FOOTER ============ */
+.site-footer{  /* positions the footer*/
+  max-width: 1200px;
+  margin: 0 auto 18px;
+  padding: 0 18px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+
+/* */
+.housing-title {   /* housing text*/
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.housing-type {  /* housing type text*/
+  margin-top: 4px;
+  font-size: 14px;
+  color: #111;
+}
+
+.housing-card {   /* controls the housing card/container*/
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.housing-card img {  /* controls the housing card image*/
+  width: 260px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: var(--shadow, 0 4px 8px rgba(0,0,0,0.1));
+  background: #eee;
+  display: block;
+}
+
+.housing-card .more { /* housing card more button*/
+  margin-top: 10px;  
+  background: var(--charcoal, #111);
+  color: #eaeaea;
+  font-size: 12px;
+  padding: 7px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.15s ease, transform 0.06s ease;
+}
+
+.housing-card .more:hover { /* controls the hover of the housing more button*/
+  background: #1f1f1f;
+  transform: translateY(-1px);
+}
+
+/* Housing grid layout */
+.housing-grid {   /* controls the housing grid layout*/
+  max-width: 1200px;
+  margin: 0 auto 28px;
+  padding: 0 18px 24px;
+  display: grid;
+  gap: 36px 120px;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  justify-items: center;
+}
+
+@media (max-width: 900px) {
+  .housing-grid {
+    gap: 28px 48px;
+  }
+}
+
+@media (max-width: 760px) {
+  .housing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ========= FOOTER ========= */
+.site-footer{
+  max-width:1200px; margin:0 auto 18px; padding:0 18px;
+  color:var(--muted); font-size:12px;
+}
+
+/* Sticky footer layout */
+html, body { height: 100%; }
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+}
+main { flex: 1 0 auto; }
+
+/* Footer */
+.site-footer {
+  flex-shrink: 0;
+  background: #fff;
+  color: #111;
+  border-top: 1px solid #eaeaea;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 20px;
+  display: grid;
+  grid-template-columns: 260px 1fr; /* left brand / right links */
+  gap: 24px 40px;
+  align-items: start;
+}
+
+/* Left: brand + social */
+.footer-brand {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 16px;
+}
+
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+}
+.brand-mark svg rect { fill: #111; } /* placeholder logo color */
+
+.social {
+  display: flex;
+  gap: 10px;
+}
+.social .icon { /* footer icons*/
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: transform .06s ease, opacity .15s ease;
+}
+.social .icon:hover { transform: translateY(-1px); opacity: 0.9; }
+.social .icon svg { width: 18px; height: 18px; fill: currentColor; }
+
+/* Right: link columns */
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  gap: 24px 40px;
+}
+.footer-links h4 { /* controls the footer links*/
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.footer-links ul { /* lists the footer links*/
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.footer-links a {  /* controls the display of the footer links*/
+  display: inline-block;
+  padding: 6px 0;
+  color: #111;
+  text-decoration: none;
+  font-size: 14px;
+}
+.footer-links a:hover { text-decoration: underline; } /* footer link hover*/
+
+/* Bottom bar */
+.footer-bottom {
+  border-top: 1px solid #efefef;
+  padding: 12px 20px;
+  font-size: 13px;
+  color: #6b6b6b;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+  .footer-links {
+    grid-template-columns: repeat(3, minmax(120px, 1fr));
+  }
+}
+@media (max-width: 620px) {
+  .footer-links {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 420px) {
+  .footer-links {
+    grid-template-columns: 1fr;
+  }
+}
+
