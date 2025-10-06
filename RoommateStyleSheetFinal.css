@@ -129,7 +129,7 @@ nav a.btn {
   margin: 0;}
 }
 
-nav a:hover {
+nav a.btn:hover {
   background: #444;        /* lighter black/gray on hover */
 }
 /*GWENS MESSAGES*/
@@ -495,5 +495,6 @@ main { flex: 1 0 auto; }
     grid-template-columns: 1fr;
   }
 }
+
 
 
