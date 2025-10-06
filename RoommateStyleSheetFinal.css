@@ -107,7 +107,7 @@ body, html {
   padding:10px 20px;
 }
 
-nav ul {
+nav ul.btn {
   list-style: none;
   display: flex;
   gap: 4rem;               /* spacing between buttons */
@@ -115,7 +115,7 @@ nav ul {
   padding: 0;
 }
 
-nav a {
+nav a.btn {
   display: inline-block;
   padding: 0.5rem 1rem;
   background: #000;        /* black button */
@@ -495,4 +495,5 @@ main { flex: 1 0 auto; }
     grid-template-columns: 1fr;
   }
 }
+
 
