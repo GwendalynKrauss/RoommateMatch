@@ -160,7 +160,7 @@ nav a.btn:hover {
     inset: 0; /* fills the page */
     display: grid;
     place-items: center; /* centers child img */
-   z-index: -1;     /*moves the image behind the text*/
+    z-index: -1;     /*moves the image behind the text*/
 }
 
 /* Grid of 4 cards */
@@ -504,6 +504,7 @@ main { flex: 1 0 auto; }
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
