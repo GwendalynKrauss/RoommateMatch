@@ -25,7 +25,8 @@ header {
 }
 
 .profile-about-section {
-  position: absolute;
+  position: relative;
+  z-index: 1;  
   right: 6rem;
   top: 140px;   /* shift it down so it starts below your photo THIS TOO*/
   max-width: 300px;
@@ -66,9 +67,12 @@ header {
 .profile-myprofile-section {
   display: flex;          /* puts image + text side by side */
   align-items: flex-start;/* align to the top */
-  gap: 1rem;              /* space between image and text */
+  gap: 1rem;     /* space between image and text */
+  position:relative;
+  z-index: 1;  
   margin-bottom: 2rem;
-    padding: rem;
+  padding: 1rem;
+
 }
 
 .profile-myprofile-section img {
@@ -90,7 +94,7 @@ body, html {
     inset: 0; /* fills the page */
     display: grid;
     place-items: center; /* centers child img */
-    z-index: -1;
+    z-index: 0;
     pointer-event: none;
 }
 
@@ -504,6 +508,7 @@ main { flex: 1 0 auto; }
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
