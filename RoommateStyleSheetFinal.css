@@ -3,20 +3,29 @@
 
 
 /*GWENS PROFILE*/
+html, body {
+    margin: 0;
+    height: 100;
+    font-size: 16px;
+    line-height:1.5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 header {
     background-color: #813333;
     padding: 0.25rem 0.5rem;
+    position: relative;
+    z-index: 2;
 }
 /*profile picture image*/
 .profile-top-right {
-  display: block;
-    position: absolute;
-  margin-left: auto;   /* pushes image to the right */
+  position: absolute;  
   margin-right: 1rem;  /* small spacing from edge */
   margin-top: 0.5rem;  /* spacing under header */
   max-width: 120px;
   border-radius: 8px;
   padding:10px 20px;
+  display: block;  
 }
 
 .profile-image {
@@ -25,15 +34,12 @@ header {
 }
 
 .profile-about-section {
-  position: relative;
-  z-index: 1;  
-  right: 6rem;
-  top: 140px;   /* shift it down so it starts below your photo THIS TOO*/
-  max-width: 300px;
-  text-align: left;
-  line-height: 1.5;
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
+    position: relative;
+    z-index 2;
+    right: 0;
+    top: 0;            /* removed the odd large top offset for more predictable layout */
+    max-width: 300px;
+    text-align: left;
 }
 
 
@@ -69,7 +75,7 @@ header {
   align-items: flex-start;/* align to the top */
   gap: 1rem;     /* space between image and text */
   position:relative;
-  z-index: 1;  
+  z-index: 2;  
   margin-bottom: 2rem;
   padding: 1rem;
 
@@ -78,15 +84,11 @@ header {
 .profile-myprofile-section img {
   max-width: 300px;       /* size of the profile picture */
   border-radius: 8px;     /* optional rounded corners */
-  padding:20px 20px;
+  padding: 20px;
 }
 
 .profile-bottomphoto {
     padding:20px 20px;
-}
-body, html {
-    margin: 0;
-    height: 100%;
 }
 
 .profile-background {
@@ -126,6 +128,7 @@ nav .nav-list {
   gap: 4rem;               /* spacing between buttons */
   justify-content: center; /* center the nav bar */
   padding: 0;
+  margin: 0;  
 }
 
 nav a.btn {
@@ -136,10 +139,6 @@ nav a.btn {
   text-decoration: none;   /* remove underline */
   border-radius: 5px;      /* rounded corners */
   font-weight: bold;
-  body {font-size: 16px;
-  line-height: 1.5;
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;}
 }
 
 nav a.btn:hover {
@@ -508,6 +507,7 @@ main { flex: 1 0 auto; }
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
