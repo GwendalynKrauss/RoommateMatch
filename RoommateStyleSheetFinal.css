@@ -10,6 +10,7 @@ header {
 /*profile picture image*/
 .profile-top-right {
   display: block;
+    position: absolute;
   margin-left: auto;   /* pushes image to the right */
   margin-right: 1rem;  /* small spacing from edge */
   margin-top: 0.5rem;  /* spacing under header */
@@ -20,13 +21,13 @@ header {
 
 .profile-image {
     padding: 10px 20px
+    display: inline-block;
 }
 
 .profile-about-section {
   position: absolute;
   right: 6rem;
-  top: calc(50% + 200px);   /* shift it down so it starts below your photo THIS TOO*/
-    transform: translateY(-50%);
+  top: 140px;   /* shift it down so it starts below your photo THIS TOO*/
   max-width: 300px;
   text-align: left;
   line-height: 1.5;
@@ -67,6 +68,7 @@ header {
   align-items: flex-start;/* align to the top */
   gap: 1rem;              /* space between image and text */
   margin-bottom: 2rem;
+    padding: rem;
 }
 
 .profile-myprofile-section img {
@@ -89,6 +91,7 @@ body, html {
     display: grid;
     place-items: center; /* centers child img */
     z-index: -1;
+    pointer-event: none;
 }
 
 .profile-background img {
@@ -112,7 +115,8 @@ body, html {
   padding:10px 20px;
 }
 
-nav ul.btn {
+nav ul.btn
+nav .nav-list {
   list-style: none;
   display: flex;
   gap: 4rem;               /* spacing between buttons */
@@ -500,6 +504,7 @@ main { flex: 1 0 auto; }
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
