@@ -1,9 +1,10 @@
-/*GWENS PROFILE*/
+/* GWENS PROFILE */
 header {
     background-color: #813333;
     padding: 0.25rem 0.5rem;
 }
-/*profile picture image*/
+
+/* profile picture image */
 .profile-top-right {
   display: block;
   margin-left: auto;   /* pushes image to the right */
@@ -17,15 +18,13 @@ header {
 .profile-about-section {
   position: absolute;
   right: 6rem;
-  top: calc(50% + 200px);   /* shift it down so it starts below your photo THIS TOO*/
- /* transform: translateY(-50%);*/
+  top: calc(50% + 200px);   /* shift it down so it starts below your photo */
   max-width: 300px;
   text-align: left;
   line-height: 1.5;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 }
-
 
 .profile-about-section img {
   max-width: 100%;          
@@ -37,13 +36,10 @@ header {
   margin-bottom: 0.5rem;
 }
 
-
 .profile-about-content {
   flex: 1;                     /* take up space between images */
   text-align: center;          /* center "About" and paragraph */
 }
-
-
 
 .profile-about-row {
   display: flex;
@@ -69,6 +65,7 @@ header {
 .profile-bottomphoto {
     padding:20px 20px;
 }
+
 body, html {
     margin: 0;
     height: 100%;
@@ -88,8 +85,6 @@ body, html {
     object-fit: cover; /* scale nicely inside */
     opacity: 0.75;     /* 25% translucent */
 }
-
-
 
 .myprofile-details {
   display: flex;
@@ -119,15 +114,19 @@ nav a {
   text-decoration: none;   /* remove underline */
   border-radius: 5px;      /* rounded corners */
   font-weight: bold;
-  body {font-size: 16px;
-  line-height: 1.5;
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;}
 }
 
 nav a:hover {
   background: #444;        /* lighter black/gray on hover */
 }
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
 /*GWENS MESSAGES*/
 .messages-title {
     position: absolute;
@@ -491,6 +490,7 @@ main { flex: 1 0 auto; }
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
