@@ -1,7 +1,7 @@
 /* GWENS PROFILE */
 header {
-    background-color: #813333;
-    padding: 0.25rem 0.5rem;
+  background-color: #813333;
+  padding: 0.25rem 0.5rem;
 }
 
 /* profile picture image */
@@ -127,32 +127,44 @@ body {
   margin: 0;
 }
 
-/*GWENS MESSAGES*/
+/* =======================
+   GWEN'S MESSAGES PAGE
+   ======================= */
+
+/* Page title */
 .messages-title {
-    position: absolute;
-    top:10;
-    left:40%;
-    text-align: center;
+  position: relative; /* or just remove position entirely */
+  margin-top: 10px;
+  text-align: center;
 }
 
-.message {
-    position: absolute;
-  top: 20;             /* stick to top */
-  right: 0;           /* stick to right */
+
+/* Top-right icon */
+.messages-message {
+  position: absolute;
+  top: 20px; /* stick to top */
+  right: 0;  /* stick to right */
 }
 
+/* Background image */
 .messages-background {
-    position: fixed;
-    inset: 0; /* fills the page */
-    display: grid;
-    place-items: center; /* centers child img */
-   z-index: -1;     /*moves the image behind the text*/
+  position: fixed;
+  inset: 0; /* fills the page */
+  display: grid;
+  place-items: center; /* centers child img */
+  z-index: -1; /* moves the image behind text */
 }
 
-/* Grid of 4 cards */
+.messages-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Layout: 3 columns (left | center | right) */
 .messages-notifications-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* left | middle | right */
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
   max-width: 1200px;
   margin: 40px auto;
@@ -170,13 +182,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding: 20px; */
   font-size: 50px;
-  color:#813333;
-  /* line-height: 1.5; */
-  line-height: 100px;
+  color: #813333;
   line-height: 1.5;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   margin: 0;
 }
 
@@ -200,22 +209,23 @@ body {
 }
 
 /* Profile picture */
-.messages-card-header img.profile-pic {
+.messages-card-header img.messages-profile-pic {
   width: 40px;
   height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
 }
 
 /* Card body */
 .messages-card-body {
   padding: 15px;
-  height:100px;
+  height: 100px;
   font-size: 14px;
   color: #333;
   line-height: 1.5;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 }
-
 
 
 /* _____________________________________________________________________________________________________________________*/
