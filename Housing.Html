@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Basic page setup and metadata -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Roommate Match Site – Housing</title>
+
+    <!-- Link to external stylesheet -->
     <link rel="stylesheet" href="RoommateStyleSheetFinal.css">
 </head>
+
 <body>
+
+<!-- ===================== HEADER / NAVIGATION ===================== -->
 <header class="header">
+    <!-- Logo clickable back to main page -->
     <a href="main.html">
         <img class="logo" src="images/logo.png" alt="Roommate Match site logo">
     </a>
 
+    <!-- Main navigation menu -->
     <nav class="nav" aria-label="Main navigation">
         <ul>
+            <!-- aria-current marks the active page -->
             <li><a href="main.html">Home</a></li>
             <li><a href="Housing.html" aria-current="page">Housing</a></li>
             <li><a href="index.html">My Profile</a></li>
@@ -21,12 +30,14 @@
         </ul>
     </nav>
 
+    <!-- Sign-in and Register buttons -->
     <div class="auth-buttons">
         <a href="signin.html" class="btn-signin">Sign In</a>
         <a href="register.html" class="btn-register">Register</a>
     </div>
 </header>
 
+<!-- ===================== PAGE INTRO SECTION ===================== -->
 <section class="page-intro">
   <h1>Explore Housing Options</h1>
   <p>
@@ -36,8 +47,11 @@
   </p>
 </section>
 
+<!-- ===================== HOUSING FILTER DROPDOWN ===================== -->
 <section class="filter-section">
   <label for="housing-filter">Filter by housing type:</label>
+
+  <!-- Dropdown triggers filterHousing() when changed -->
   <select id="housing-filter" onchange="filterHousing()">
     <option value="all">All</option>
     <option value="suite">Suite</option>
@@ -46,11 +60,16 @@
   </select>
 </section>
 
+<!-- ===================== GRID OF HOUSING OPTIONS ===================== -->
 <section class="housing-grid" aria-label="Housing options">
+
+  <!-- Each housing-card contains image, type, and modal trigger -->
   <article class="housing-card" data-type="suite">
     <img src="images/pattersondorm.jpg" alt="Patterson Hall exterior">
     <div class="title">Building: Patterson Hall</div>
     <div class="type">Type: COED Suite</div>
+
+    <!-- "More details" opens modal -->
     <a class="more" href="#" onclick="openModal('patterson-modal'); return false;">More details</a>
   </article>
 
@@ -74,13 +93,22 @@
     <div class="type">Type: COED Apartments</div>
     <a class="more" href="#" onclick="openModal('eastquad-modal'); return false;">More details</a>
   </article>
+
 </section>
+
+
+<!-- ===================== MODALS (POPUP WINDOWS) ===================== -->
 
 <!-- Patterson Modal -->
 <div id="patterson-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="patterson-title">
   <div class="modal-content">
+
+    <!-- Close button -->
     <button class="close" onclick="closeModal('patterson-modal')" aria-label="Close Patterson Hall details">&times;</button>
+
     <h2 id="patterson-title">Patterson Hall</h2>
+
+    <!-- Google Maps link -->
     <p>
       <strong>Address:</strong>
       <a href="https://www.google.com/maps/search/?api=1&query=612+Main+St,+Columbia,+SC" 
@@ -89,8 +117,12 @@
          612 Main St, Columbia, SC
       </a>
     </p>
+
+    <!-- Additional details -->
     <p><strong>Type:</strong> Coed Suite-Style</p>
     <p><strong>Overview:</strong> Patterson offers suite-style living with 2–4 students per suite, shared bathroom, and community lounges on each floor.</p>
+
+    <!-- Example reviews -->
     <p><strong>Student Reviews:</strong></p>
     <ul>
       <li>“Super social, lots of first-years.”</li>
@@ -99,11 +131,13 @@
   </div>
 </div>
 
-<!-- Bates House Modal -->
+<!-- Bates Modal -->
 <div id="bates-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="bates-title">
   <div class="modal-content">
     <button class="close" onclick="closeModal('bates-modal')" aria-label="Close Bates House details">&times;</button>
+
     <h2 id="bates-title">Bates House</h2>
+
     <p>
       <strong>Address:</strong>
       <a href="https://www.google.com/maps/search/?api=1&query=123+Bates+Dr,+Columbia,+SC" 
@@ -112,8 +146,10 @@
          123 Bates Dr, Columbia, SC
       </a>
     </p>
+
     <p><strong>Type:</strong> Coed Traditional</p>
     <p><strong>Overview:</strong> Traditional-style dorm with hall bathrooms, strong community vibe, and easy access to dining.</p>
+
     <p><strong>Student Reviews:</strong></p>
     <ul>
       <li>“Feels like classic freshman dorm life.”</li>
@@ -126,7 +162,9 @@
 <div id="capstone-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="capstone-title">
   <div class="modal-content">
     <button class="close" onclick="closeModal('capstone-modal')" aria-label="Close Capstone details">&times;</button>
+
     <h2 id="capstone-title">Capstone</h2>
+
     <p>
       <strong>Address:</strong>
       <a href="https://www.google.com/maps/search/?api=1&query=902+Barnwell+St,+Columbia,+SC" 
@@ -135,8 +173,10 @@
          902 Barnwell St, Columbia, SC
       </a>
     </p>
+
     <p><strong>Type:</strong> Coed Suite-Style High-Rise</p>
     <p><strong>Overview:</strong> High-rise tower with suite-style rooms, great views, and the famous Capstone dining at the top.</p>
+
     <p><strong>Student Reviews:</strong></p>
     <ul>
       <li>“Love the views from the upper floors.”</li>
@@ -149,7 +189,9 @@
 <div id="eastquad-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="eastquad-title">
   <div class="modal-content">
     <button class="close" onclick="closeModal('eastquad-modal')" aria-label="Close East Quad details">&times;</button>
+
     <h2 id="eastquad-title">East Quad</h2>
+
     <p>
       <strong>Address:</strong>
       <a href="https://www.google.com/maps/search/?api=1&query=1300+Wheat+St,+Columbia,+SC" 
@@ -158,8 +200,10 @@
          1300 Wheat St, Columbia, SC
       </a>
     </p>
+
     <p><strong>Type:</strong> Coed Apartments</p>
     <p><strong>Overview:</strong> Apartment-style housing with private bedrooms, shared living space, and in-unit kitchens.</p>
+
     <p><strong>Student Reviews:</strong></p>
     <ul>
       <li>“Feels more independent, like off-campus vibes.”</li>
@@ -168,8 +212,12 @@
   </div>
 </div>
 
+
+<!-- ===================== FOOTER ===================== -->
 <footer>
     <p>&copy; 2025 Roommate Match</p>
+
+    <!-- Simple footer navigation -->
     <nav aria-label="Footer navigation">
         <a href="main.html">Main</a> |
         <a href="Housing.html">Housing</a> |
@@ -177,7 +225,10 @@
     </nav>
 </footer>
 
+<!-- ===================== JAVASCRIPT ===================== -->
 <script>
+
+  /* Opens modal by setting display:flex */
   function openModal(id) {
     const modal = document.getElementById(id);
     if (modal) {
@@ -185,6 +236,7 @@
     }
   }
 
+  /* Closes modal by hiding it */
   function closeModal(id) {
     const modal = document.getElementById(id);
     if (modal) {
@@ -192,7 +244,7 @@
     }
   }
 
-  // Close modal when clicking the dark background
+  /* Close modal when user clicks the dark background */
   window.addEventListener("click", function(event) {
     const modals = document.querySelectorAll(".modal");
     modals.forEach(function(modal) {
@@ -202,12 +254,15 @@
     });
   });
 
+  /* Filters housing cards based on dropdown value */
   function filterHousing() {
     const filterValue = document.getElementById("housing-filter").value;
     const cards = document.querySelectorAll(".housing-card");
 
     cards.forEach(card => {
       const type = card.getAttribute("data-type");
+
+      // Show card if it matches selected filter OR "all"
       if (filterValue === "all" || type === filterValue) {
         card.style.display = "block";
       } else {
@@ -215,6 +270,7 @@
       }
     });
   }
+
 </script>
 
 </body>

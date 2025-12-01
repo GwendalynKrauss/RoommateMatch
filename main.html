@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic metadata for character encoding and responsive scaling -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Roommate Match Site</title>
+
+  <!-- External CSS stylesheet -->
   <link rel="stylesheet" href="RoommateStyleSheetFinal.css">
 </head>
+
 <body>
+
+<!-- ========== HEADER WITH NAVIGATION & AUTH BUTTONS ========== -->
 <header class="header">
+    <!-- Website logo -->
     <img class="logo" src="images/logo.png" alt="Site logo">
+
+    <!-- Main navigation menu -->
     <nav class="nav">
         <ul>
             <li><a href="main.html">Home</a></li>
             <li><a href="Housing.Html">Housing</a></li>
             <li><a href="index.html">My Profile</a></li>
             <li><a href="messages.html">Messages</a></li>
-            
         </ul>
-
     </nav>
-        <!-- RIGHT-SIDE AUTH BUTTONS -->
+
+    <!-- Right-side Sign In and Register buttons -->
     <div class="auth-buttons">
         <a href="signin.html" class="btn-signin">Sign In</a>
         <a href="register.html" class="btn-register">Register</a>
@@ -27,6 +36,7 @@
 </header>
 </header>
 
+<!-- ========== PAGE INTRO SECTION ========== -->
 <section class="page-intro">
   <h1>Find Your Perfect Roommate</h1>
   <p>
@@ -36,152 +46,174 @@
   </p>
 </section>
 
-
-
-<!-- <h2 class="page-title">Main</h2> -->
-
-
+<!-- ========== SEARCH FILTER SECTION ========== -->
 <section class="search-section">
+
+  <!-- Label for search input -->
   <label for="roommateSearch" class="search-label">Filter Roommates:</label>
 
+  <!-- Search bar that filters cards dynamically when typing -->
   <input 
     type="text" 
     id="roommateSearch" 
     placeholder="Search by name, major, housing preference, or hometown..." 
-    onkeyup="searchRoommates()"
+    onkeyup="searchRoommates()"   <!-- triggers function on every key press -->
   >
 </section>
 
-
+<!-- ========== GRID OF ROOMMATE PROFILES ========== -->
 <section class="grid">
-  <!-- Card 1 -->
+
+  <!-- ===== CARD 1 ===== -->
+  <!-- "data-info" holds searchable keywords -->
   <article class="card" data-info="lily peterson nursing long island patterson">
     <div class="card-inner">
+
+      <!-- Profile picture -->
       <img src="images/roommateimage1.jpg" alt="Lily Peterson">
+
       <div class="meta">
+        <!-- Essential details -->
         <div><span class="label">Name:</span> Lily Peterson</div>
         <div><span class="label">Status:</span> No Roommate</div>
         <div><span class="label">Major:</span> Nursing</div>
         <div><span class="label">Hometown:</span> Long Island, NY</div>
         <div><span class="label">Housing Preference:</span> Patterson</div>
+
+        <!-- Opens modal -->
         <button class="more" type="button" onclick="openModal('lily-modal')">More</button>
-  
-
-
-
-
       </div>
     </div>
   </article>
 
-  <!-- Duplicate/modify for other profiles... -->
 
-   <!-- Card 2 -->
-  <article class="card"  data-info="james henry finance raleigh capstone">
+  <!-- ===== CARD 2 ===== -->
+  <article class="card" data-info="james henry finance raleigh capstone">
     <div class="card-inner">
       <img src="images/roommateimage2.jpg" alt="James Henry">
+      
       <div class="meta">
         <div><span class="label">Name:</span> James Henry</div>
         <div><span class="label">Status:</span> No Roommate</div>
         <div><span class="label">Major:</span> Finance</div>
         <div><span class="label">Hometown:</span> Raleigh, NC</div>
         <div><span class="label">Housing Preference:</span> Capstone</div>
-          <button class="more" type="button" onclick="openModal('james-modal')">More</button>
+
+        <button class="more" type="button" onclick="openModal('james-modal')">More</button>
       </div>
     </div>
   </article>
 
-   <!-- Card 3 -->
-  <article class="card"  data-info="jada taylor education charleston patterson">
+  <!-- ===== CARD 3 ===== -->
+  <article class="card" data-info="jada taylor education charleston patterson">
     <div class="card-inner">
       <img src="images/roommateimage3.jpg" alt="Jada Taylor">
+
       <div class="meta">
         <div><span class="label">Name:</span> Jada Taylor</div>
         <div><span class="label">Status:</span> No Roommate</div>
         <div><span class="label">Major:</span> Education</div>
         <div><span class="label">Hometown:</span> Charleston, SC</div>
         <div><span class="label">Housing Preference:</span> Patterson</div>
-          <button class="more" type="button" onclick="openModal('jada-modal')">More</button>
+
+        <button class="more" type="button" onclick="openModal('jada-modal')">More</button>
       </div>
     </div>
   </article>
 
-
-
-   <!-- Card 4 -->
-  <article class="card"   data-info="jordan kelly sports management charlotte green quad">
+  <!-- ===== CARD 4 ===== -->
+  <article class="card" data-info="jordan kelly sports management charlotte green quad">
     <div class="card-inner">
       <img src="images/roommateimage4.jpg" alt="Jordan Kelly">
+
       <div class="meta">
         <div><span class="label">Name:</span> Jordan Kelly</div>
         <div><span class="label">Status:</span> No Roommate</div>
         <div><span class="label">Major:</span> Sports Management</div>
         <div><span class="label">Hometown:</span> Charlotte, NC</div>
         <div><span class="label">Housing Preference:</span> Green Quad</div>
-          <button class="more" type="button" onclick="openModal('jordan-modal')">More</button>
+
+        <button class="more" type="button" onclick="openModal('jordan-modal')">More</button>
       </div>
     </div>
   </article>
 
-
 </section>
+
+
+<!-- ========== MODALS (POP-UP DIALOGS FOR PROFILES) ========== -->
 
 <!-- Lily Modal -->
 <div id="lily-modal" class="modal">
   <div class="modal-content">
+    <!-- Close (X) button -->
     <span class="close" onclick="closeModal('lily-modal')">&times;</span>
+
     <h2>Lily Peterson</h2>
     <p><strong>Major:</strong> Nursing</p>
     <p><strong>Hometown:</strong> Long Island, NY</p>
     <p><strong>Housing Preference:</strong> Patterson Hall</p>
-    <p><strong>About Lily:</strong> Early riser, loves quiet weeknights and going out for brunch on weekends. Enjoys Pilates, Netflix, and study sessions at the library.</p>
-    <p><strong>Roommate Preferences:</strong> Non-smoker, generally tidy, okay with guests on weekends.</p>
+
+    <!-- Profile details -->
+    <p><strong>About Lily:</strong> Early riser...etc.</p>
+    <p><strong>Roommate Preferences:</strong> Non-smoker...etc.</p>
   </div>
 </div>
+
 
 <!-- James Modal -->
 <div id="james-modal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('james-modal')">&times;</span>
+
     <h2>James Henry</h2>
     <p><strong>Major:</strong> Finance</p>
     <p><strong>Hometown:</strong> Raleigh, NC</p>
     <p><strong>Housing Preference:</strong> Capstone</p>
-    <p><strong>About James:</strong> Big sports fan, likes going to games and watching ESPN. Keeps his space fairly clean and usually studies in the evenings.</p>
-    <p><strong>Roommate Preferences:</strong> Laid-back, okay with some noise, open to sharing snacks & game nights.</p>
+
+    <p><strong>About James:</strong> Big sports fan...etc.</p>
+    <p><strong>Roommate Preferences:</strong> Laid-back...etc.</p>
   </div>
 </div>
+
 
 <!-- Jada Modal -->
 <div id="jada-modal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('jada-modal')">&times;</span>
+
     <h2>Jada Taylor</h2>
     <p><strong>Major:</strong> Education</p>
     <p><strong>Hometown:</strong> Charleston, SC</p>
     <p><strong>Housing Preference:</strong> Patterson Hall</p>
-    <p><strong>About Jada:</strong> Very involved on campus, loves volunteering and student org events. Enjoys decorating the room and creating a cozy space.</p>
-    <p><strong>Roommate Preferences:</strong> Communicative, respectful of quiet hours, enjoys occasional roommate nights in.</p>
+
+    <p><strong>About Jada:</strong> Very involved...etc.</p>
+    <p><strong>Roommate Preferences:</strong> Communicative...etc.</p>
   </div>
 </div>
+
 
 <!-- Jordan Modal -->
 <div id="jordan-modal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('jordan-modal')">&times;</span>
+
     <h2>Jordan Kelly</h2>
     <p><strong>Major:</strong> Sports Management</p>
     <p><strong>Hometown:</strong> Charlotte, NC</p>
     <p><strong>Housing Preference:</strong> Green Quad</p>
-    <p><strong>About Jordan:</strong> Active and outgoing, loves working out, intramural sports, and exploring Columbia. Often out during the day.</p>
-    <p><strong>Roommate Preferences:</strong> Okay with guests, open to sharing rides to campus, keeps common areas reasonably neat.</p>
+
+    <p><strong>About Jordan:</strong> Active and outgoing...etc.</p>
+    <p><strong>Roommate Preferences:</strong> Okay with guests...etc.</p>
   </div>
 </div>
 
 
-
+<!-- ========== FOOTER ========== -->
 <footer>
     <p>&copy; 2025 Roommate Match</p>
+
+    <!-- Footer navigation -->
     <nav>
         <a href="main.html">Main</a> |
         <a href="Housing.html">Housing</a> |
@@ -190,14 +222,18 @@
 </footer>
 
 
+<!-- ========== JAVASCRIPT FUNCTIONS ========== -->
 <script>
+
+  /* Opens modal by setting its display to flex */
   function openModal(id) {
     const modal = document.getElementById(id);
     if (modal) {
-      modal.style.display = "flex";  // flex = centered using the CSS above
+      modal.style.display = "flex";
     }
   }
 
+  /* Closes a modal by hiding it */
   function closeModal(id) {
     const modal = document.getElementById(id);
     if (modal) {
@@ -205,7 +241,7 @@
     }
   }
 
-  // Optional: close when clicking the dark background
+  /* Allows user to close modal by clicking outside the modal content */
   window.addEventListener("click", function (event) {
     const modals = document.querySelectorAll(".modal");
     modals.forEach(function(modal) {
@@ -215,33 +251,27 @@
     });
   });
 
-
+  /* Search function that filters roommate cards by typed keywords */
   function searchRoommates() {
-  const input = document.getElementById("roommateSearch").value.toLowerCase();
-  const cards = document.querySelectorAll(".card");
+    const input = document.getElementById("roommateSearch").value.toLowerCase();
+    const cards = document.querySelectorAll(".card");
 
-  cards.forEach(card => {
-    const data = card.getAttribute("data-info").toLowerCase();
+    cards.forEach(card => {
+      const data = card.getAttribute("data-info").toLowerCase();
 
-    if (data.includes(input)) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
-  });
-}
+      // Show card if search matches anything in data-info
+      if (data.includes(input)) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
+
 </script>
 
-
 </body>
-
-
-
 </html>
-
-
-
-
 
 
 
