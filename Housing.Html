@@ -38,10 +38,24 @@
 </section>
 
 
+<section class="filter-section">
+  <label for="housing-filter">Filter by Housing Type:</label>
+  <select id="housing-filter" onchange="filterHousing()">
+    <option value="all">All</option>
+    <option value="suite">Suite</option>
+    <option value="traditional">Traditional</option>
+    <option value="apartment">Apartment</option>
+  </select>
+</section>
+
+
+
+
+
 <!-- <h2 class="page-title">Housing Options</h2> -->
 
 <section class="housing-grid">
-  <article class="housing-card">
+  <article class="housing-card" data-type="suite">
     <img src="images/pattersondorm.jpg" alt="Patterson Hall">
     <div class="title">Building: Patterson Hall</div>
     <div class="type">Type: COED Suite</div>
@@ -50,14 +64,14 @@
   </article>
   <!-- Repeat for other buildings -->
 
-   <article class="housing-card">
+   <article class="housing-card" data-type="traditional">
     <img src="images/bateshousedorm.jpg" alt="Bates House">
     <div class="title">Building: Bates House</div>
     <div class="type">Type: COED Traditional</div>
      <a class="more" href="#" onclick="openModal('bates-modal'); return false;">More</a>
   </article>
 
-     <article class="housing-card">
+     <article class="housing-card" data-type="suite">
     <img src="images/capstonedorm.jpg" alt="Capstone">
     <div class="title">Building: Capstone</div>
     <div class="type">Type: COED Suite</div>
@@ -65,7 +79,7 @@
   </article>
 
 
-     <article class="housing-card">
+     <article class="housing-card" data-type="apartment">
     <img src="images/eastquaddorm.jpg" alt="East Quad">
     <div class="title">Building: East Quad</div>
     <div class="type">Type: COED Apartments</div>
@@ -165,6 +179,22 @@
       }
     });
   });
+
+function filterHousing() {
+  const filterValue = document.getElementById("housing-filter").value;
+  const cards = document.querySelectorAll(".housing-card");
+
+  cards.forEach(card => {
+    const type = card.getAttribute("data-type");
+
+    if (filterValue === "all" || type === filterValue) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+
 </script>
  
 </body>
