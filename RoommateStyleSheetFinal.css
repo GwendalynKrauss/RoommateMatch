@@ -693,6 +693,24 @@ footer a:hover {
 }
 
 
+.search-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;   /* centers horizontally */
+  margin: 20px 0;
+}
+
+#roommateSearch {
+  width: 35%;                /* smaller width (you can adjust) */
+  min-width: 220px;          /* keeps it readable on small screens */
+  padding: 8px 12px;         /* slightly smaller padding */
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;        /* smaller font */
+  text-align: left;
+}
+
+
 
 
 
