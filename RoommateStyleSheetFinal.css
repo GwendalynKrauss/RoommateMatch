@@ -655,6 +655,29 @@ footer a:hover {
 }
 
 
+/* Intro section at top of each page */
+.page-intro {
+  max-width: 900px;
+  margin: 30px auto 20px;
+  padding: 20px 26px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+  text-align: center;
+}
+
+.page-intro h1 {
+  margin: 0 0 10px;
+  font-size: 1.9rem;
+  color: #813333;  /* matches your header */
+  font-weight: 700;
+}
+
+.page-intro p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.55;
+}
 
 
 
