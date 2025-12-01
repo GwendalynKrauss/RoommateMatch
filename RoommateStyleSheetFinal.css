@@ -87,7 +87,7 @@ position: sticky;
   align-items: flex-start;/* align to the top */
   gap: 1rem;              /* space between image and text */
   margin-bottom: 2rem;
-    padding: 20px 20px;
+    padding: 1px 60px;
 }
 
 .profile-myprofile-section img {
@@ -97,7 +97,7 @@ position: sticky;
 }
 
 .profile-bottomphoto {
-    padding:20px 20px;
+    padding:20px 80px;
 }
 
 body, html {
@@ -182,14 +182,26 @@ body {
     margin-bottom: 10px;
 }
 
-.profile-pfp {
+.pfp {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     background: #ccc;
     margin-right: 10px;
     overflow: hidden;
+    flex-shrink: 0 !important;
 }
+
+.pfp img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+    padding: 0 !important;
+    max-width: none !important;
+}
+
 
 .avatar {
     width: 45px;
@@ -282,10 +294,10 @@ body {
     display: block;
     margin-left: auto;   /* pushes image to the right */
     margin-right: 1rem;  /* small spacing from edge */
-    margin-top: 6rem;  /* spacing under header */
+    margin-top: 1rem;  /* spacing under header */
     max-width: 120px;
     /*border-radius: 8px;*/
-    padding:10px 20px;
+    padding: 1px 20px;
 }
 
 /* Top-right icon */

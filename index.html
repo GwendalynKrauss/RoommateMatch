@@ -30,18 +30,22 @@
 
 
     <main>
-        <div class="profile-background">
+
+        <div class=messages-background>
             <img src="images/campus.png" alt="Campus background">
+        </div>
+        <div class="messages-title">
+            <h1>My Profile</h1>
         </div>
         <section class="profile-myprofile-section">
         <div class="post">
 
             <div class="post-header">
-                <div class="profile-pfp">
-                    <img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=300" alt="avatar">
+                <div class="pfp">
+                    <img src="images/IMG_1638.jpg" alt="avatar">
                 </div>
                 <div>
-                    <div class="name">Gwendalyn Krauss</div>
+                    <div class="name">Keira Cabrera</div>
                     <div class="time">No Roommate</div>
                 </div>
             </div>
@@ -70,20 +74,20 @@
 
                 <div class="post-header">
                     <div class="avatar">
-                        <img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=300" alt="avatar">
+                        <img src="images/IMG_1638.jpg" alt="avatar">
                     </div>
                     <div>
-                        <div class="name">Gwendalyn Krauss</div>
+                        <div class="name">Keira Cabrera</div>
                         <div class="time">2 hours ago</div>
                     </div>
                 </div>
 
                 <div class="post-text">
-                    IDK
+                    My dad and me at an RSL game!
                 </div>
 
                 <div class="post-image">
-                    <img src="images/image (3).png" alt="Profile photo">
+                    <img src="images/IMG_1636.jpg" alt="Profile photo">
                 </div>
 
                 <div class="post-actions">
@@ -112,14 +116,14 @@
         <div class="post">
 
             <div class="post-image">
-                <img src="images/image (1).png" alt="About image">
+                <img src="images/IMG_1640.jpg" alt="About image">
             </div>
             <div class="profile-about-content">
                 <h3>About</h3>
             </div>
             <div class="post-actions">
 
-                <span>Hey! I’m super excited to be starting my freshman year of college this fall. I can’t wait to meet new people, explore campus, and just dive into everything. A little about me — I’m a huge movie fan. I love everything from classic films to new releases, and I’m always down for a late-night movie marathon. I also grew up dancing and still love it. I’m really looking forward to finding friends who share these hobbies and making the most of the next four years.</span>
+                <span>Hey! I’m super excited to be starting my freshman year of college this fall. I can’t wait to meet new people, explore campus, and just dive into everything. I’m a huge movie fan! I love everything from classic films to new releases, and I’m always down for a late-night movie marathon. I also grew up dancing and still love it. I’m really looking forward to finding friends who share these hobbies and making the most of the next four years.</span>
             </div>
 
         </div>
@@ -142,22 +146,22 @@
 
             <form id="commentForm" autocomplete="off">
                 <!-- Name removed; automatically inserted by script -->
-                <textarea id="comment" placeholder="Write your comment..." required maxlength="1000" rows="4"></textarea>
+                <textarea id="comment" placeholder="Tell us about yourself!" required maxlength="1000" rows="4"></textarea>
                 <div style="display:flex; gap:8px; align-items:center;">
                     <button type="submit">Post</button>
                     <div style="flex:1"></div>
-                    <small id="hint">Max 1000 chars.</small>
+                    <small id="hint"> </small>
                 </div>
             </form>
 
             <div id="comments" class="comments" aria-live="polite">
-                <div id="empty" class="empty">No comments yet.</div>
+                <div id="empty" class="empty"> </div>
             </div>
         </div>
 
         <script>
             // Fixed name (change this to whatever you want)
-            const FIXED_NAME = "Gwendalyn Krauss";
+            const FIXED_NAME = "Keira Cabrera";
 
             const form = document.getElementById('commentForm');
             const commentInput = document.getElementById('comment');
