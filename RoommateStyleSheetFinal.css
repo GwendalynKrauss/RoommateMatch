@@ -565,6 +565,52 @@ footer a:hover {
 
 
 
+/* Layout: spread logo, nav, and right-side buttons */
+.header {
+    display: flex;
+    justify-content: space-between;  /* spreads left/middle/right */
+    align-items: center;
+    background-color: #813333;
+    padding: 0.25rem 0.5rem;
+}
+
+/* ---- AUTH BUTTONS (right side) ---- */
+
+.auth-buttons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+/* Sign In button */
+.btn-signin {
+    background: #ffffff;
+    color: #813333;
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn-signin:hover {
+    background: #f2dddd;
+}
+
+/* Register button */
+.btn-register {
+    background: #000000;
+    color: white;
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn-register:hover {
+    background: #333;
+}
+
+
+
 
 
 
