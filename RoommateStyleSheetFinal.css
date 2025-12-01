@@ -2,7 +2,7 @@
 header {
   background-color: #813333;
   padding: 0.25rem 0.5rem;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     display: flex;
 position: sticky;
@@ -121,7 +121,7 @@ body, html {
 }
 
 <!--                /* Minimal styling */-->
-<!--                body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; padding: 24px; color:#111; }-->
+<!--                body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; color:#111; }-->
 <!--                .box { max-width:700px; margin:0 auto; }-->
 <!--                form { display:grid; gap:8px; margin-bottom:16px; }-->
 <!--                input, textarea { width:100%; padding:8px; border:1px solid #ccc; border-radius:6px; box-sizing:border-box; }-->
@@ -146,9 +146,10 @@ body, html {
 
 
 .nav {
-    position: absolute;
-    left: 50%;                       /* position from center */
-    transform: translateX(-50%);     /* truly center it */
+    margin: 0 auto;
+    /*position: absolute;*/
+    /*left: 50%;                       !* position from center *!*/
+    /*transform: translateX(-50%);  !* truly center it *!*/
 }
 
 nav ul {
@@ -164,7 +165,6 @@ nav ul {
 body {
     font-family: Arial, sans-serif;
     background: #f1f1f1;
-    padding: 20px;
 }
 
 .post {
