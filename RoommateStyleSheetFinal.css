@@ -708,19 +708,27 @@ footer a:hover {
 .search-section {
   width: 100%;
   display: flex;
-  justify-content: center;   /* centers horizontally */
-  margin: 20px 0;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0 10px;
+}
+
+.search-label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #813333;
 }
 
 #roommateSearch {
-  width: 35%;                /* smaller width (you can adjust) */
-  min-width: 220px;          /* keeps it readable on small screens */
-  padding: 8px 12px;         /* slightly smaller padding */
+  width: 35%;
+  min-width: 220px;
+  padding: 8px 12px;
   border-radius: 8px;
   border: 1px solid #ccc;
-  font-size: 0.95rem;        /* smaller font */
-  text-align: left;
+  font-size: 0.95rem;
 }
+
 
 
 
