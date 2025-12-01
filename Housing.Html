@@ -28,50 +28,174 @@
     </div>
 </header>
 
-<h2 class="page-title">Housing Options</h2>
+<section class="page-intro">
+  <h1>Explore Housing Options</h1>
+  <p>
+    Compare USC housing buildings including style, location, and amenities. 
+    Click "More" to view a detailed overview, student reviews, and floor layout 
+    information for each residence hall.
+  </p>
+</section>
+
+
+<section class="filter-section">
+  <label for="housing-filter">Filter by Housing Type:</label>
+  <select id="housing-filter" onchange="filterHousing()">
+    <option value="all">All</option>
+    <option value="suite">Suite</option>
+    <option value="traditional">Traditional</option>
+    <option value="apartment">Apartment</option>
+  </select>
+</section>
+
+
+
+
+
+<!-- <h2 class="page-title">Housing Options</h2> -->
 
 <section class="housing-grid">
-  <article class="housing-card">
+  <article class="housing-card" data-type="suite">
     <img src="images/pattersondorm.jpg" alt="Patterson Hall">
     <div class="title">Building: Patterson Hall</div>
     <div class="type">Type: COED Suite</div>
-    <a class="more" href="#">More</a>
+    <a class="more" href="#" onclick="openModal('patterson-modal'); return false;">More</a>
+
   </article>
   <!-- Repeat for other buildings -->
 
-   <article class="housing-card">
+   <article class="housing-card" data-type="traditional">
     <img src="images/bateshousedorm.jpg" alt="Bates House">
     <div class="title">Building: Bates House</div>
     <div class="type">Type: COED Traditional</div>
-    <a class="more" href="#">More</a>
+     <a class="more" href="#" onclick="openModal('bates-modal'); return false;">More</a>
   </article>
 
-     <article class="housing-card">
+     <article class="housing-card" data-type="suite">
     <img src="images/capstonedorm.jpg" alt="Capstone">
     <div class="title">Building: Capstone</div>
     <div class="type">Type: COED Suite</div>
-    <a class="more" href="#">More</a>
+    <a class="more" href="#" onclick="openModal('capstone-modal'); return false;">More</a>
   </article>
 
 
-     <article class="housing-card">
+     <article class="housing-card" data-type="apartment">
     <img src="images/eastquaddorm.jpg" alt="East Quad">
     <div class="title">Building: East Quad</div>
     <div class="type">Type: COED Apartments</div>
-    <a class="more" href="#">More</a>
+    <a class="more" href="#" onclick="openModal('eastquad-modal'); return false;">More</a>
   </article>
 </section>
+
+<!-- Patterson Modal -->
+<div id="patterson-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('patterson-modal')">&times;</span>
+    <h2>Patterson Hall</h2>
+    <p><strong>Address:</strong> 612 Main St, Columbia, SC</p>
+    <p><strong>Type:</strong> Coed Suite-Style</p>
+    <p><strong>Overview:</strong> Patterson offers suite-style living with 2–4 students per suite, shared bathroom, and community lounges on each floor.</p>
+    <p><strong>Student Reviews:</strong></p>
+    <ul>
+      <li>“Super social, lots of first-years.”</li>
+      <li>“Rooms are cozy, but the location is great for walking to classes.”</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Bates House Modal -->
+<div id="bates-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('bates-modal')">&times;</span>
+    <h2>Bates House</h2>
+    <p><strong>Address:</strong> 123 Bates Dr, Columbia, SC</p>
+    <p><strong>Type:</strong> Coed Traditional</p>
+    <p><strong>Overview:</strong> Traditional-style dorm with hall bathrooms, strong community vibe, and easy access to dining.</p>
+    <p><strong>Student Reviews:</strong></p>
+    <ul>
+      <li>“Feels like classic freshman dorm life.”</li>
+      <li>“Bathrooms get busy, but the community is worth it.”</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Capstone Modal -->
+<div id="capstone-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('capstone-modal')">&times;</span>
+    <h2>Capstone</h2>
+    <p><strong>Address:</strong> 902 Barnwell St, Columbia, SC</p>
+    <p><strong>Type:</strong> Coed Suite-Style High-Rise</p>
+    <p><strong>Overview:</strong> High-rise tower with suite-style rooms, great views, and the famous Capstone dining at the top.</p>
+    <p><strong>Student Reviews:</strong></p>
+    <ul>
+      <li>“Love the views from the upper floors.”</li>
+      <li>“Elevators can be slow during rush times.”</li>
+    </ul>
+  </div>
+</div>
+
+<!-- East Quad Modal -->
+<div id="eastquad-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('eastquad-modal')">&times;</span>
+    <h2>East Quad</h2>
+    <p><strong>Address:</strong> 1300 Wheat St, Columbia, SC</p>
+    <p><strong>Type:</strong> Coed Apartments</p>
+    <p><strong>Overview:</strong> Apartment-style housing with private bedrooms, shared living space, and in-unit kitchens.</p>
+    <p><strong>Student Reviews:</strong></p>
+    <ul>
+      <li>“Feels more independent, like off-campus vibes.”</li>
+      <li>“Love having a kitchen and living room.”</li>
+    </ul>
+  </div>
+</div>
+
 
 <footer>
     <p>&copy; 2025 Roommate Match</p>
     <nav>
-        <a href="privacy.html">Privacy Policy</a> |
-        <a href="terms.html">Terms of Service</a> |
-        <a href="contact.html">Contact</a>
+        <a href="main.html">Main</a> |
+        <a href="Housing.html">Housing</a> |
+        <a href="contact.html">Contact Us</a>
     </nav>
 </footer>
 
+<script>
+  function openModal(id) {
+    document.getElementById(id).style.display = "flex";
+  }
 
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
+
+  // Optional: close modal when clicking on the dark background
+  window.addEventListener("click", function(event) {
+    const modals = document.querySelectorAll(".modal");
+    modals.forEach(function(modal) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  });
+
+function filterHousing() {
+  const filterValue = document.getElementById("housing-filter").value;
+  const cards = document.querySelectorAll(".housing-card");
+
+  cards.forEach(card => {
+    const type = card.getAttribute("data-type");
+
+    if (filterValue === "all" || type === filterValue) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+
+</script>
  
 </body>
 

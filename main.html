@@ -27,8 +27,18 @@
 </header>
 </header>
 
+<section class="page-intro">
+  <h1>Find Your Perfect Roommate</h1>
+  <p>
+    Browse through potential roommates and learn more about their background,
+    housing preferences, and lifestyle. Click "More" to view expanded profiles 
+    and find the best match for your living style.
+  </p>
+</section>
 
-<h2 class="page-title">Main</h2>
+
+
+<!-- <h2 class="page-title">Main</h2> -->
 
 <section class="grid">
   <!-- Card 1 -->
@@ -63,7 +73,7 @@
         <div><span class="label">Major:</span> Finance</div>
         <div><span class="label">Hometown:</span> Raleigh, NC</div>
         <div><span class="label">Housing Preference:</span> Capstone</div>
-        <a class="more" href="#">More</a>
+          <button class="more" type="button" onclick="openModal('james-modal')">More</button>
       </div>
     </div>
   </article>
@@ -78,7 +88,7 @@
         <div><span class="label">Major:</span> Education</div>
         <div><span class="label">Hometown:</span> Charleston, SC</div>
         <div><span class="label">Housing Preference:</span> Patterson</div>
-        <a class="more" href="#">More</a>
+          <button class="more" type="button" onclick="openModal('jada-modal')">More</button>
       </div>
     </div>
   </article>
@@ -95,7 +105,7 @@
         <div><span class="label">Major:</span> Sports Management</div>
         <div><span class="label">Hometown:</span> Charlotte, NC</div>
         <div><span class="label">Housing Preference:</span> Green Quad</div>
-        <a class="more" href="#">More</a>
+          <button class="more" type="button" onclick="openModal('jordan-modal')">More</button>
       </div>
     </div>
   </article>
@@ -103,19 +113,95 @@
 
 </section>
 
+<!-- Lily Modal -->
+<div id="lily-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('lily-modal')">&times;</span>
+    <h2>Lily Peterson</h2>
+    <p><strong>Major:</strong> Nursing</p>
+    <p><strong>Hometown:</strong> Long Island, NY</p>
+    <p><strong>Housing Preference:</strong> Patterson Hall</p>
+    <p><strong>About Lily:</strong> Early riser, loves quiet weeknights and going out for brunch on weekends. Enjoys Pilates, Netflix, and study sessions at the library.</p>
+    <p><strong>Roommate Preferences:</strong> Non-smoker, generally tidy, okay with guests on weekends.</p>
+  </div>
+</div>
+
+<!-- James Modal -->
+<div id="james-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('james-modal')">&times;</span>
+    <h2>James Henry</h2>
+    <p><strong>Major:</strong> Finance</p>
+    <p><strong>Hometown:</strong> Raleigh, NC</p>
+    <p><strong>Housing Preference:</strong> Capstone</p>
+    <p><strong>About James:</strong> Big sports fan, likes going to games and watching ESPN. Keeps his space fairly clean and usually studies in the evenings.</p>
+    <p><strong>Roommate Preferences:</strong> Laid-back, okay with some noise, open to sharing snacks & game nights.</p>
+  </div>
+</div>
+
+<!-- Jada Modal -->
+<div id="jada-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('jada-modal')">&times;</span>
+    <h2>Jada Taylor</h2>
+    <p><strong>Major:</strong> Education</p>
+    <p><strong>Hometown:</strong> Charleston, SC</p>
+    <p><strong>Housing Preference:</strong> Patterson Hall</p>
+    <p><strong>About Jada:</strong> Very involved on campus, loves volunteering and student org events. Enjoys decorating the room and creating a cozy space.</p>
+    <p><strong>Roommate Preferences:</strong> Communicative, respectful of quiet hours, enjoys occasional roommate nights in.</p>
+  </div>
+</div>
+
+<!-- Jordan Modal -->
+<div id="jordan-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('jordan-modal')">&times;</span>
+    <h2>Jordan Kelly</h2>
+    <p><strong>Major:</strong> Sports Management</p>
+    <p><strong>Hometown:</strong> Charlotte, NC</p>
+    <p><strong>Housing Preference:</strong> Green Quad</p>
+    <p><strong>About Jordan:</strong> Active and outgoing, loves working out, intramural sports, and exploring Columbia. Often out during the day.</p>
+    <p><strong>Roommate Preferences:</strong> Okay with guests, open to sharing rides to campus, keeps common areas reasonably neat.</p>
+  </div>
+</div>
 
 
 
- <footer>
+<footer>
     <p>&copy; 2025 Roommate Match</p>
     <nav>
-        <a href="privacy.html">Privacy Policy</a> |
-        <a href="terms.html">Terms of Service</a> |
-        <a href="contact.html">Contact</a>
+        <a href="main.html">Main</a> |
+        <a href="Housing.html">Housing</a> |
+        <a href="contact.html">Contact Us</a>
     </nav>
 </footer>
 
 
+<script>
+  function openModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) {
+      modal.style.display = "flex";  // flex = centered using the CSS above
+    }
+  }
+
+  function closeModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) {
+      modal.style.display = "none";
+    }
+  }
+
+  // Optional: close when clicking the dark background
+  window.addEventListener("click", function (event) {
+    const modals = document.querySelectorAll(".modal");
+    modals.forEach(function(modal) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  });
+</script>
 
 
 </body>
