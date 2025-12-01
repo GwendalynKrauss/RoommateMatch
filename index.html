@@ -20,40 +20,182 @@
     </nav>
 </header>
 
-    <div class="profile-message">
-        <img class="profile-top-right" src="images/dm_image2.png" alt="Messages icon">
-    </div>
 
     <main>
         <div class="profile-background">
             <img src="images/campus.png" alt="Campus background">
         </div>
-
         <section class="profile-myprofile-section">
-            <img src="images/grouphoto.png" alt="Profile photo" width="300">
-            <div class="myprofile-details">
-                <h3>Name: Gwendalyn Krauss</h3>
-                <h3>Status: No Roommate</h3>
+        <div class="post">
+
+            <div class="post-header">
+                <div class="profile-pfp">
+                    <img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=300" alt="avatar">
+                </div>
+                <div>
+                    <div class="name">Gwendalyn Krauss</div>
+                    <div class="time">No Roommate</div>
+                </div>
+            </div>
+
+            <div class="post-text">
+                Major: Integrated Information Technology
+                Hometown: Leesburg, Virginia
+                Housing Preference: Campus Village 4
+            </div>
+
+        </div>
+        </section>
+
+<!--        <section class="profile-myprofile-section">-->
+<!--            <img src="images/grouphoto.png" alt="Profile photo" width="300">-->
+<!--            <div class="myprofile-details">-->
+<!--                <h3>Name: Gwendalyn Krauss</h3>-->
+<!--                <h3>Status: No Roommate</h3>-->
+<!--            </div>-->
+<!--        </section>-->
+        <section class="profile-bottomphoto">
+<!--                        <h3>Major: Integrated Information Technology</h3>-->
+<!--                        <h3>Hometown: Leesburg, Virginia</h3>-->
+<!--                        <h3>Housing Preference: Campus Village 4</h3>-->
+            <div class="post">
+
+                <div class="post-header">
+                    <div class="avatar">
+                        <img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=300" alt="avatar">
+                    </div>
+                    <div>
+                        <div class="name">Gwendalyn Krauss</div>
+                        <div class="time">2 hours ago</div>
+                    </div>
+                </div>
+
+                <div class="post-text">
+                    IDK
+                </div>
+
+                <div class="post-image">
+                    <img src="images/image (3).png" alt="Profile photo">
+                </div>
+
+                <div class="post-actions">
+                    <span>❤️ Like</span>
+                    <span>💬 Comment</span>
+                    <span>🔁 Share</span>
+                </div>
+
             </div>
         </section>
 
-        <section class="profile-bottomphoto">
-            <h3>Major: Integrated Information Technology</h3>
-            <h3>Hometown: Leesburg, Virginia</h3>
-            <h3>Housing Preference: Campus Village 4</h3>
-            <img src="images/image (3).png" alt="Additional photo" width="300">
-        </section>
 
+        <div class="profile-message">
+            <img class="profile-top-right" src="images/dm_image2.png" alt="Messages icon">
+        </div>
 
-        <aside class="profile-about-section">
-            <img src="images/image (1).png" alt="About image">
+<!--        <section class="profile-bottomphoto">-->
+<!--            <h3>Major: Integrated Information Technology</h3>-->
+<!--            <h3>Hometown: Leesburg, Virginia</h3>-->
+<!--            <h3>Housing Preference: Campus Village 4</h3>-->
+<!--            <img src="images/image (3).png" alt="Additional photo" width="300">-->
+<!--        </section>-->
+        <div class="profile-about-section">
+        <div class="post">
+
+            <div class="post-image">
+                <img src="images/image (1).png" alt="About image">
+            </div>
             <div class="profile-about-content">
                 <h3>About</h3>
-                <p>
-                 Hey! I’m super excited to be starting my freshman year of college this fall. I can’t wait to meet new people, explore campus, and just dive into everything. A little about me — I’m a huge movie fan. I love everything from classic films to new releases, and I’m always down for a late-night movie marathon. I also grew up dancing and still love it. I’m really looking forward to finding friends who share these hobbies and making the most of the next four years.
-                </p>
             </div>
-        </aside>
+            <div class="post-actions">
+
+                <span>Hey! I’m super excited to be starting my freshman year of college this fall. I can’t wait to meet new people, explore campus, and just dive into everything. A little about me — I’m a huge movie fan. I love everything from classic films to new releases, and I’m always down for a late-night movie marathon. I also grew up dancing and still love it. I’m really looking forward to finding friends who share these hobbies and making the most of the next four years.</span>
+            </div>
+
+        </div>
+            </div>
+
+<!--        <aside class="profile-about-section">-->
+<!--            <img src="images/image (1).png" alt="About image">-->
+<!--            <div class="profile-about-content">-->
+<!--                <h3>About</h3>-->
+<!--                <p>-->
+<!--                 Hey! I’m super excited to be starting my freshman year of college this fall. I can’t wait to meet new people, explore campus, and just dive into everything. A little about me — I’m a huge movie fan. I love everything from classic films to new releases, and I’m always down for a late-night movie marathon. I also grew up dancing and still love it. I’m really looking forward to finding friends who share these hobbies and making the most of the next four years.-->
+<!--                </p>-->
+<!--            </div>-->
+<!--        </aside>-->
+
+<!--        <head>-->
+
+        <div class="box">
+            <h2>Leave a comment</h2>
+
+            <form id="commentForm" autocomplete="off">
+                <!-- Name removed; automatically inserted by script -->
+                <textarea id="comment" placeholder="Write your comment..." required maxlength="1000" rows="4"></textarea>
+                <div style="display:flex; gap:8px; align-items:center;">
+                    <button type="submit">Post</button>
+                    <div style="flex:1"></div>
+                    <small id="hint">Max 1000 chars.</small>
+                </div>
+            </form>
+
+            <div id="comments" class="comments" aria-live="polite">
+                <div id="empty" class="empty">No comments yet.</div>
+            </div>
+        </div>
+
+        <script>
+            // Fixed name (change this to whatever you want)
+            const FIXED_NAME = "Gwendalyn Krauss";
+
+            const form = document.getElementById('commentForm');
+            const commentInput = document.getElementById('comment');
+            const commentsEl = document.getElementById('comments');
+            const emptyEl = document.getElementById('empty');
+
+            function createCommentNode(name, text) {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'comment';
+
+                const meta = document.createElement('div');
+                meta.className = 'meta';
+                const who = document.createElement('strong');
+                who.textContent = name;
+                const time = document.createElement('span');
+                time.style.marginLeft = '8px';
+                time.textContent = new Date().toLocaleString();
+                meta.appendChild(who);
+                meta.appendChild(time);
+
+                const content = document.createElement('div');
+                content.className = 'content';
+                content.textContent = text;
+
+                wrapper.appendChild(meta);
+                wrapper.appendChild(content);
+                return wrapper;
+            }
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const text = commentInput.value.trim();
+
+                if (!text) {
+                    alert('Comment cannot be empty.');
+                    return;
+                }
+
+                const node = createCommentNode(FIXED_NAME, text);
+
+                if (emptyEl) emptyEl.remove();
+
+                commentsEl.insertBefore(node, commentsEl.firstChild);
+
+                commentInput.value = '';
+                commentInput.focus();
+            });
+        </script>
     </main>
 
     <footer class="site-footer">
